@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
 * {
     margin: 0%;
     padding: 0%;
+    font-family: 'Josefin Sans', sans-serif;
 }
 
 body {
@@ -25,11 +27,19 @@ body {
     border-bottom: 1px solid #bfbfbf;
 }
 
+.wrapper.active header i{
+    font-size: 30px;
+    margin-left: 5px;
+}
+
 header i {
     cursor: pointer;
-    font-size: 30px;
+    font-size: 0px;
     margin-right: 8px;
+}
 
+.wrapper.active .input-part{
+    display: none;
 }
 
 .wrapper .input-part {
@@ -56,6 +66,10 @@ header i {
     cursor: pointer;
 }
 
+.input-part input:is(:focus, valid) {
+    border: 2px solid #43affc;
+}
+
 .input-part .sperator {
     height: 1px;
     width: 100%;
@@ -66,7 +80,8 @@ header i {
     justify-content: center;
 }
 
-.input-part .info-txt{
+.input-part .info-txt {
+    display: none;
     font-size: 17px;
     text-align: center;
     padding: 12px 10px;
@@ -74,14 +89,106 @@ header i {
     margin-bottom: 15px;
 }
 
-.info-txt.error{
-    color: #721c24 ;
+.info-txt.error {
+    display: block;
+    color: #721c24;
     background-color: #f8d7da;
     border: 1px solid #f5c6cb;
 }
 
-.info-txt.pending{
-    color: #0c5460 ;
+.info-txt.pending {
+    display: block;
+    color: #0c5460;
     background-color: #d1ecf1;
     border: 1px solid #bee5eb;
 }
+
+.wrapper .weather-part {
+    margin: 30px 0 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.wrapper.active .weather-part{
+display: flex;
+}
+
+.weather-part img {
+    max-width: 125px;
+}
+
+.weather-part .temp {
+    display: flex;
+    font-size: 70px;
+    font-weight: 400;
+}
+
+.weather-part .temp .num {
+    font-weight: 600;
+}
+
+.weather-part .temp .deg {
+    font-size: 40px;
+    margin: 10px 5px 0 0;
+    display: block;
+
+}
+
+.weather-part .location{
+    font-size: 21px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.location i{
+    font-size: 22px;
+}
+
+.weather{
+    padding: 3%;
+}
+.weather-part .bottom_detail{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    border-top: 1px solid #bfbfbf;
+    justify-content: space-between;
+}
+
+.bottom_detail .column{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 15px 0 ;
+    padding-left: 50px;
+}
+
+.column i{
+    font-size: 40px;
+    color: #43affc;
+}
+
+.column.humidity{
+    border-left: 1px solid #bfbfbf;
+}
+
+.details .temp, .humidity span{
+    font-size: 18px ;
+    font-weight: 500;
+    margin-top: -3px;
+}
+
+.details .temp .deg{
+    margin: 0;
+    font-size: 17px;
+    padding: 0 2px 0 1px;
+}
+
+.details p{
+    font-size: 14px;
+    margin-top: 1px;
+}
+
